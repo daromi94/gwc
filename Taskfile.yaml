@@ -2,7 +2,7 @@ version: "3"
 
 vars:
   BUILD_DIR: bin
-  EXECUTABLE: xgo
+  EXECUTABLE: gwc
 
 tasks:
   default:
