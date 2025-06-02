@@ -1,0 +1,19 @@
+version: "3"
+
+vars:
+  BUILD_DIR: bin
+  EXECUTABLE: xgo
+
+tasks:
+  default:
+    cmd: task -a
+
+  build:
+    cmds:
+      - test -d {{.BUILD_DIR}} || mkdir {{.BUILD_DIR}}
+      - go build -o {{.BUILD_DIR}}/{{.EXECUTABLE}} src/main.go
+
+  execute:
+    deps:
+      - build
+    cmd: ./{{.BUILD_DIR}}/{{.EXECUTABLE}}
